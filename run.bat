@@ -1,0 +1,6 @@
+@echo off
+echo Installing dependencies from pyproject.toml...
+pip install -e . --quiet
+echo Launching YT-DLP Downloader...
+python app.py
+pause

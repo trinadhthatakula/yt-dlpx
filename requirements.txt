@@ -1,0 +1,5 @@
+# Dependencies are now managed in pyproject.toml
+# You can safely delete this file.
+#
+# To install: pip install -e .
+#   or:       uv sync
