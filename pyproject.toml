@@ -1,6 +1,11 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "ytdlp-downloader"
+name = "ytdlpx"
 version = "0.1.0"
+description = "A modern desktop GUI for yt-dlp — download video and audio in any format"
 requires-python = ">=3.11,<3.14"
 dependencies = [
     "customtkinter>=5.2.0",
@@ -8,6 +13,12 @@ dependencies = [
     "Pillow>=10.0.0",
     "requests>=2.31.0",
 ]
+
+[project.scripts]
+yt-dlpx = "ytdlpx.app:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ytdlpx"]
 
 [tool.uv]
 # Use Homebrew / system Python which ships with Tcl/Tk.
