@@ -87,6 +87,22 @@ yt-dlpx
 
 ---
 
+## Updating
+
+To upgrade your existing installation to the latest version directly from PyPI:
+
+### Using pipx
+```bash
+pipx upgrade ytdlpx
+```
+
+### Using uv
+```bash
+uv tool upgrade ytdlpx
+```
+
+---
+
 ## Development Setup
 
 If you want to run the project locally or contribute to development:
