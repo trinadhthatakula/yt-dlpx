@@ -9,7 +9,7 @@ description = "A modern desktop GUI for yt-dlp — download video and audio in a
 requires-python = ">=3.11,<3.14"
 dependencies = [
     "customtkinter>=5.2.0",
-    "yt-dlp>=2024.1.0",
+    "yt-dlp>=2026.6.9",
     "Pillow>=10.0.0",
     "requests>=2.31.0",
 ]
