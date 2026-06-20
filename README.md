@@ -4,6 +4,17 @@ A premium, modern desktop application for downloading media from YouTube and 100
 
 **Current Version: 0.3.1**
 
+## Preview
+
+<p align="center">
+  <img src="images/sc_1.png" width="48%" alt="Download View" />
+  <img src="images/sc_2.png" width="48%" alt="Convert View" />
+</p>
+<p align="center">
+  <img src="images/sc_3.png" width="48%" alt="Settings View" />
+  <img src="images/sc_4.png" width="48%" alt="Active Queue View" />
+</p>
+
 ---
 
 ## Key Features
