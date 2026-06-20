@@ -52,26 +52,38 @@ brew install python-tk@3.13
 
 ## Installation
 
-### Recommended Method (pipx)
-[pipx](https://pipx.pypa.io) installs `yt-dlpx` in an isolated environment and exposes the `yt-dlpx` CLI on your system `$PATH`.
+There are two recommended ways to install `yt-dlpx` directly from PyPI (pip).
 
-1. **Install pipx** (if not already installed):
-   ```bash
-   brew install pipx
-   pipx ensurepath
-   ```
-   *(Remember to restart your terminal after running `pipx ensurepath`)*
+### Method 1: Using pipx (Recommended for desktop use)
+[pipx](https://pipx.pypa.io) installs `yt-dlpx` in an isolated environment and exposes the `yt-dlpx` command globally.
 
-2. **Install yt-dlpx**:
-   Specify the Homebrew Python path to ensure Tcl/Tk is enabled:
-   ```bash
-   pipx install . --python $(brew --prefix python@3.13)/bin/python3.13
-   ```
+```bash
+# 1. Install pipx (if needed)
+brew install pipx
+pipx ensurepath  # Restart your terminal after this
 
-3. **Launch the Application**:
-   ```bash
-   yt-dlpx
-   ```
+# 2. Install yt-dlpx (pointing to Homebrew's Python to ensure Tkinter support)
+pipx install ytdlpx --python $(brew --prefix python@3.13)/bin/python3.13
+```
+
+### Method 2: Using uv (Fastest tool runner)
+[uv](https://github.com/astral-sh/uv) can install tools globally, or run them instantly on-the-fly.
+
+- **Run on-the-fly (without installing)**:
+  ```bash
+  uvx --python $(brew --prefix python@3.13)/bin/python3.13 ytdlpx
+  ```
+
+- **Install globally**:
+  ```bash
+  uv tool install ytdlpx --python $(brew --prefix python@3.13)/bin/python3.13
+  ```
+
+### Launch
+Once installed, simply run:
+```bash
+yt-dlpx
+```
 
 ---
 
@@ -96,7 +108,7 @@ If you want to run the project locally or contribute to development:
 ### `ModuleNotFoundError: No module named '_tkinter'`
 Your Python interpreter lacks Tcl/Tk. Ensure you installed `python-tk` from Homebrew and force a reinstall pointing explicitly to that Python version:
 ```bash
-pipx install . --python $(brew --prefix python@3.13)/bin/python3.13 --force
+pipx install ytdlpx --python $(brew --prefix python@3.13)/bin/python3.13 --force
 ```
 
 ### `ffmpeg` not found warning on launch
