@@ -62,8 +62,8 @@ There are two recommended ways to install `yt-dlpx` directly from PyPI (pip).
 brew install pipx
 pipx ensurepath  # Restart your terminal after this
 
-# 2. Install ytdlpx-gui (pointing to Homebrew's Python to ensure Tkinter support)
-pipx install ytdlpx-gui --python $(brew --prefix python@3.13)/bin/python3.13
+# 2. Install ytdlpx (pointing to Homebrew's Python to ensure Tkinter support)
+pipx install ytdlpx --python $(brew --prefix python@3.13)/bin/python3.13
 ```
 
 ### Method 2: Using uv (Fastest tool runner)
@@ -71,12 +71,12 @@ pipx install ytdlpx-gui --python $(brew --prefix python@3.13)/bin/python3.13
 
 - **Run on-the-fly (without installing)**:
   ```bash
-  uvx --from ytdlpx-gui --python $(brew --prefix python@3.13)/bin/python3.13 yt-dlpx
+  uvx --python $(brew --prefix python@3.13)/bin/python3.13 ytdlpx
   ```
 
 - **Install globally**:
   ```bash
-  uv tool install ytdlpx-gui --python $(brew --prefix python@3.13)/bin/python3.13
+  uv tool install ytdlpx --python $(brew --prefix python@3.13)/bin/python3.13
   ```
 
 ### Launch
@@ -108,7 +108,7 @@ If you want to run the project locally or contribute to development:
 ### `ModuleNotFoundError: No module named '_tkinter'`
 Your Python interpreter lacks Tcl/Tk. Ensure you installed `python-tk` from Homebrew and force a reinstall pointing explicitly to that Python version:
 ```bash
-pipx install ytdlpx-gui --python $(brew --prefix python@3.13)/bin/python3.13 --force
+pipx install ytdlpx --python $(brew --prefix python@3.13)/bin/python3.13 --force
 ```
 
 ### `ffmpeg` not found warning on launch

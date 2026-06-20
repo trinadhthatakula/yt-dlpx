@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ytdlpx-gui"
+name = "ytdlpx"
 version = "0.3.0"
 description = "A modern desktop GUI for yt-dlp — download video and audio in any format"
 readme = "README.md"
