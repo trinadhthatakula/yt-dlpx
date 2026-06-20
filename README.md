@@ -2,7 +2,7 @@
 
 A premium, modern desktop application for downloading media from YouTube and 1000+ other sites, and converting local media files between formats. Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp) and [ffmpeg](https://ffmpeg.org), with a beautiful, custom Slate/Indigo user interface built on CustomTkinter.
 
-**Current Version: 0.2.0**
+**Current Version: 0.3.0**
 
 ---
 

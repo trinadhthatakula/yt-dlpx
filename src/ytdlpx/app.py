@@ -414,7 +414,7 @@ class App(ctk.CTk):
         # Version label at bottom of sidebar
         version_label = ctk.CTkLabel(
             self._sidebar_frame,
-            text="v0.2.0 (Modernized)",
+            text="v0.3.0",
             font=ctk.CTkFont(size=11),
             text_color=COLOR_TEXT_MUTED,
         )
