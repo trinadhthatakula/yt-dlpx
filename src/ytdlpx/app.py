@@ -536,7 +536,7 @@ class App(ctk.CTk):
             opts_row, variable=self._dl_fmt_var, values=VIDEO_FORMATS, width=178,
             font=ctk.CTkFont(size=13),
             fg_color=COLOR_BG_MAIN, button_color=COLOR_MUTED, button_hover_color=COLOR_MUTED_HOVER,
-            text_color=COLOR_TEXT_TITLE, border_color=COLOR_BORDER, border_width=1,
+            text_color=COLOR_TEXT_TITLE,
             dropdown_fg_color=COLOR_BG_MAIN, dropdown_text_color=COLOR_TEXT_TITLE,
             dropdown_hover_color=COLOR_MUTED
         )
@@ -553,7 +553,7 @@ class App(ctk.CTk):
             opts_row, variable=self._quality_var, values=VIDEO_QUALITIES, width=148,
             font=ctk.CTkFont(size=13),
             fg_color=COLOR_BG_MAIN, button_color=COLOR_MUTED, button_hover_color=COLOR_MUTED_HOVER,
-            text_color=COLOR_TEXT_TITLE, border_color=COLOR_BORDER, border_width=1,
+            text_color=COLOR_TEXT_TITLE,
             dropdown_fg_color=COLOR_BG_MAIN, dropdown_text_color=COLOR_TEXT_TITLE,
             dropdown_hover_color=COLOR_MUTED
         )
@@ -713,7 +713,7 @@ class App(ctk.CTk):
             values=CONVERT_FORMAT_GROUPS["Audio"], width=160,
             font=ctk.CTkFont(size=13),
             fg_color=COLOR_BG_MAIN, button_color=COLOR_MUTED, button_hover_color=COLOR_MUTED_HOVER,
-            text_color=COLOR_TEXT_TITLE, border_color=COLOR_BORDER, border_width=1,
+            text_color=COLOR_TEXT_TITLE,
             dropdown_fg_color=COLOR_BG_MAIN, dropdown_text_color=COLOR_TEXT_TITLE,
             dropdown_hover_color=COLOR_MUTED
         )
@@ -836,7 +836,7 @@ class App(ctk.CTk):
             command=self._on_setting_changed,
             font=ctk.CTkFont(size=13),
             fg_color=COLOR_BG_MAIN, button_color=COLOR_MUTED, button_hover_color=COLOR_MUTED_HOVER,
-            text_color=COLOR_TEXT_TITLE, border_color=COLOR_BORDER, border_width=1,
+            text_color=COLOR_TEXT_TITLE,
             dropdown_fg_color=COLOR_BG_MAIN, dropdown_text_color=COLOR_TEXT_TITLE,
             dropdown_hover_color=COLOR_MUTED
         )
@@ -937,7 +937,7 @@ class App(ctk.CTk):
             command=self._on_setting_changed,
             font=ctk.CTkFont(size=13),
             fg_color=COLOR_BG_MAIN, button_color=COLOR_MUTED, button_hover_color=COLOR_MUTED_HOVER,
-            text_color=COLOR_TEXT_TITLE, border_color=COLOR_BORDER, border_width=1,
+            text_color=COLOR_TEXT_TITLE,
             dropdown_fg_color=COLOR_BG_MAIN, dropdown_text_color=COLOR_TEXT_TITLE,
             dropdown_hover_color=COLOR_MUTED
         )
