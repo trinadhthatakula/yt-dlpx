@@ -16,6 +16,42 @@ from tkinter import filedialog, messagebox
 import yt_dlp
 
 # ──────────────────────────────────────────────
+#  Font & Notification Helpers
+# ──────────────────────────────────────────────
+# Enforce Open Sans font family globally in CustomTkinter
+_original_CTkFont = ctk.CTkFont
+
+class OpenSansFont(_original_CTkFont):
+    def __init__(self, family="Open Sans", size=12, weight="normal", slant="roman", underline=False, overstrike=False):
+        super().__init__(family=family, size=size, weight=weight, slant=slant, underline=underline, overstrike=overstrike)
+
+ctk.CTkFont = OpenSansFont
+
+
+def _send_desktop_notification(title: str, message: str):
+    """Send cross-platform desktop notification using native tools."""
+    try:
+        if sys.platform == "darwin":  # macOS
+            cmd = f'display notification "{message}" with title "{title}"'
+            subprocess.run(["osascript", "-e", cmd], capture_output=True)
+        elif sys.platform == "win32":  # Windows
+            ps_code = (
+                f'[void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms"); '
+                f'$icon = New-Object System.Windows.Forms.NotifyIcon; '
+                f'$icon.Icon = [System.Drawing.SystemIcons]::Information; '
+                f'$icon.BalloonTipIcon = "Info"; '
+                f'$icon.BalloonTipText = "{message}"; '
+                f'$icon.BalloonTipTitle = "{title}"; '
+                f'$icon.Visible = $True; '
+                f'$icon.ShowBalloonTip(5000)'
+            )
+            subprocess.run(["powershell", "-Command", ps_code], capture_output=True)
+        else:  # Linux / Unix
+            subprocess.run(["notify-send", title, message], capture_output=True)
+    except Exception:
+        pass
+
+# ──────────────────────────────────────────────
 #  Theme / Color Palette
 # ──────────────────────────────────────────────
 # Custom color tokens for premium dark/light look
@@ -414,7 +450,7 @@ class App(ctk.CTk):
         # Version label at bottom of sidebar
         version_label = ctk.CTkLabel(
             self._sidebar_frame,
-            text="v0.3.0",
+            text="v0.3.1",
             font=ctk.CTkFont(size=11),
             text_color=COLOR_TEXT_MUTED,
         )
@@ -1421,6 +1457,10 @@ class App(ctk.CTk):
                     _, item, status = msg
                     self._apply_status(item, status)
                     self._dl_update_stats()
+                    if status == "Done":
+                        _send_desktop_notification("Download Complete", item.title)
+                    elif status == "Error":
+                        _send_desktop_notification("Download Failed", item.title)
 
                 elif kind == "dl_progress":
                     _, item, pct, speed, eta = msg
@@ -1448,6 +1488,10 @@ class App(ctk.CTk):
                     _, item, status = msg
                     self._apply_status(item, status)
                     self._cv_update_stats()
+                    if status == "Done":
+                        _send_desktop_notification("Conversion Complete", item.name)
+                    elif status == "Error":
+                        _send_desktop_notification("Conversion Failed", item.name)
 
                 elif kind == "cv_progress":
                     _, item, pct = msg
