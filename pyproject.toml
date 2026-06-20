@@ -4,15 +4,36 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ytdlpx"
-version = "0.3.0"
+version = "0.2.0"
 description = "A modern desktop GUI for yt-dlp — download video and audio in any format"
+readme = "README.md"
 requires-python = ">=3.11,<3.14"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Trinadh Thatakula", email = "trinadh.thatakula@gmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Sound/Audio",
+]
 dependencies = [
     "customtkinter>=5.2.0",
     "yt-dlp>=2026.6.9",
     "Pillow>=10.0.0",
     "requests>=2.31.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/trinadhthatakula/yt-dlpx"
+Issues = "https://github.com/trinadhthatakula/yt-dlpx/issues"
+Repository = "https://github.com/trinadhthatakula/yt-dlpx"
 
 [project.scripts]
 yt-dlpx = "ytdlpx.app:main"
